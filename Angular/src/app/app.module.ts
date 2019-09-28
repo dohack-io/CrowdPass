@@ -9,11 +9,9 @@ import { DialogComponent } from './dialog/dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent,
-    DialogComponent
+    ShoppingListComponent
   ],
   imports: [
-    NgbModule,
     BrowserModule,
     MatListModule,
     BrowserAnimationsModule

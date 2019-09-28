@@ -18,8 +18,12 @@ export class ShoppingListComponent {
   barcode: string;
 
 
-  openDialog(value: string): void {
-    const dialogRef = this.dialog.open(DialogComponent, { width: '500px', data: {barcode: this.barcode}
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent,
+      {
+        width: '500px', data: {
+          barcode: this.barcode
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
