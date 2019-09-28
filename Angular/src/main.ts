@@ -17,8 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     MatListModule,
+    BrowserAnimationsModule,
     NgbModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [ShoppingListComponent]
