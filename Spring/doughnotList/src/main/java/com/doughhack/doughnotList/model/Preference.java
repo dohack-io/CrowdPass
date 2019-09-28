@@ -1,5 +1,7 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.PreferenceDto;
+
 import javax.persistence.Table;
 
 @Table(name = "Preference")
@@ -30,5 +32,9 @@ public class Preference extends Entity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public PreferenceDto toDto() {
+        return new PreferenceDto(name, type);
     }
 }

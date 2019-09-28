@@ -7,11 +7,13 @@ public class ShoppingListDto implements DoughNotDto {
     public String name;
     public ProfileDto admin;
     public List<ProfileDto> members;
+    public List<EntryDto> entries;
 
     public ShoppingListDto(String name, ProfileDto admin) {
         this.name = name;
         this.admin = admin;
 
+        this.members = new LinkedList<>();
         this.members = new LinkedList<>();
     }
 

@@ -1,6 +1,11 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.EntryDto;
+import com.doughhack.doughnotList.dto.ProfileDto;
+import com.doughhack.doughnotList.dto.ShoppingListDto;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -47,4 +52,20 @@ public class ShoppingList extends Entity {
     public void setName(String name) {
         this.name = name;
     }
+
+    public ShoppingListDto toDto() {
+        ShoppingListDto shoppingListDto = new ShoppingListDto(name, admin.toDto());
+        List<EntryDto> entryDtos = new LinkedList<>();
+        for (Entry entry : entries) {
+            entryDtos.add(entry.toDto());
+        }
+        shoppingListDto.entries = entryDtos;
+        List<ProfileDto> profileDtos = new LinkedList<>();
+        for (Profile profile : member) {
+            profileDtos.add(profile.toDto());
+        }
+        shoppingListDto.members = profileDtos;
+        return shoppingListDto;
+    }
+
 }

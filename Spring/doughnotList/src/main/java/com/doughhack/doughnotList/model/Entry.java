@@ -1,5 +1,7 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.EntryDto;
+
 import javax.persistence.Table;
 
 @Table(name = "Entry")
@@ -44,5 +46,9 @@ public class Entry extends Entity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public EntryDto toDto() {
+        return new EntryDto(name, barcodeNr, amount);
     }
 }
