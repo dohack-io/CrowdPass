@@ -36,6 +36,17 @@ public class Profile extends Entity{
         shoppingLists.add(list);
     }
 
+    public void addPreferenceToBlacklist(Preference preference) {
+        blacklist.add(preference);
+    }
+
+    public List<Preference> getBlacklist() {
+        return blacklist;
+    }
+
+    public List<ShoppingList> getShoppingLists() {
+        return shoppingLists;
+    }
 
     @Override
     public String toString() {
