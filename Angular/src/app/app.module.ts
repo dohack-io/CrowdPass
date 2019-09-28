@@ -11,7 +11,11 @@ import { DialogComponent } from './dialog/dialog.component';
     AppComponent,
     ShoppingListComponent
   ],
+  entryComponents:[
+    DialogComponent
+  ],
   imports: [
+    AppComponent,
     BrowserModule,
     MatListModule,
     BrowserAnimationsModule

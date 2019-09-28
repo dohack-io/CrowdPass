@@ -10,23 +10,25 @@ import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DialogComponent } from './app/dialog/dialog.component';
+import { AppComponent } from './app/app.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     ShoppingListComponent,
     DialogComponent
   ],
   entryComponents: [
-    DialogComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     MatDialogModule,
     MatListModule,
-    BrowserAnimationsModule,
-  ],
-  providers: [ShoppingListComponent, {provide: MatDialogRef, useValue: {}}],
-  bootstrap: [ShoppingListComponent]
+    BrowserAnimationsModule
+    ],
+  providers: [ShoppingListComponent,  {provide: MatDialogRef, useValue: {}}],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 
