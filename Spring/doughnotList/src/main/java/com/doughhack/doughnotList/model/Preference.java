@@ -1,5 +1,7 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.PreferenceDto;
+
 public class Preference extends Entity {
     private String name;
     private String type;
@@ -23,5 +25,9 @@ public class Preference extends Entity {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public PreferenceDto toDto() {
+        return new PreferenceDto(name, type);
     }
 }

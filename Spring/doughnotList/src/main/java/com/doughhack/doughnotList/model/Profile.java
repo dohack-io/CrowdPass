@@ -1,6 +1,10 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.PreferenceDto;
+import com.doughhack.doughnotList.dto.ProfileDto;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
@@ -71,6 +75,16 @@ public class Profile extends Entity {
 
     public void setProfileName(String profileName) {
         this.profileName = profileName;
+    }
+
+    public ProfileDto toDto() {
+        ProfileDto profileDto = new ProfileDto(profileName, firstName, lastName);
+        List<PreferenceDto> preferenceDtos = new LinkedList<>();
+        for (Preference preference : blacklist) {
+            preferenceDtos.add(preference.toDto());
+        }
+        profileDto.blackList = preferenceDtos;
+        return profileDto;
     }
 }
 
