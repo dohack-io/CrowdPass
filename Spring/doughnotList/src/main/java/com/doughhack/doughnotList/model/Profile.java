@@ -14,7 +14,7 @@ public class Profile extends Entity{
         this.firstName = firstName;
         this.lastName = lastName;
         this.profileName = profileName;
-        ArrayList<Preference> blacklist = new ArrayList();
+        this.blacklist = new ArrayList();
     }
 
 
