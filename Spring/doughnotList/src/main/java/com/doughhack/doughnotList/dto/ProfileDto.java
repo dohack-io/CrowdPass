@@ -1,5 +1,6 @@
 package com.doughhack.doughnotList.dto;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ProfileDto implements DoughNotDto {
@@ -13,6 +14,8 @@ public class ProfileDto implements DoughNotDto {
         this.profileName = profileName;
         this.firstName = firstName;
         this.lsatName = lsatName;
+
+        this.blackList = new LinkedList<>();
     }
 
     @Override
