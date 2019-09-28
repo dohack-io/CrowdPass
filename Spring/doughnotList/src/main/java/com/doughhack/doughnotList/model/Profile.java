@@ -7,14 +7,22 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-public class Profile extends Entity {
+@Table(name = "Profile")
+@javax.persistence.Entity
+public class Profile extends Entity{
     private String firstName;
     private String lastName;
     private String profileName;
+    @OneToMany
     private List<Preference> blacklist;
+    @OneToMany
     private List<ShoppingList> shoppingLists;
 
+    public Profile() {
+    }
 
     public Profile(String firstName, String lastName, String profileName) {
         this.firstName = firstName;
