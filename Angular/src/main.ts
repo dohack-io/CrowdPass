@@ -12,14 +12,16 @@ import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angula
 import { DialogComponent } from './app/dialog/dialog.component';
 import { BarecodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 
+import { AppComponent } from './app/app.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     ShoppingListComponent,
     DialogComponent
   ],
   entryComponents: [
-    DialogComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +29,9 @@ import { BarecodeScannerLivestreamModule } from 'ngx-barcode-scanner';
     MatListModule,
     BrowserAnimationsModule,
     BarecodeScannerLivestreamModule
-  ],
-  providers: [ShoppingListComponent, {provide: MatDialogRef, useValue: {}}],
-  bootstrap: [ShoppingListComponent]
+    ],
+  providers: [ShoppingListComponent,  {provide: MatDialogRef, useValue: {}}],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
 

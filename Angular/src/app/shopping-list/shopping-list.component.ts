@@ -10,7 +10,9 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 export class ShoppingListComponent {
 
   constructor(public dialog: MatDialog) { }
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+  ingredients: string[] = ['Paprika', 'Knoppers', 'Nusskuchen', 'Hühnersuppe', 'Mate', 'Cola', 'Süßigkeiten'];
+
+
   vorname = 'Denise';
   name = 'Schwarze';
 

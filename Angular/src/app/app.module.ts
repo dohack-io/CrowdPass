@@ -12,7 +12,11 @@ import { BarecodeScannerLivestreamComponent } from 'ngx-barcode-scanner';
     AppComponent,
     ShoppingListComponent
   ],
+  entryComponents:[
+    DialogComponent
+  ],
   imports: [
+    AppComponent,
     BrowserModule,
     MatListModule,
     BrowserAnimationsModule,

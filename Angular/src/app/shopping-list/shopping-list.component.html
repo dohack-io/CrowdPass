@@ -1,21 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8 lis">
+  <div class="col">
+    <div class="lis col-md-12 col-lg-12">
       <h3>Shopping List</h3>
-      von {{name}}, {{vorname}}
-    </div>
-    <div class="col-md-2 col-sm-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 col-sm-2"></div>
-    <div class="col-md-8 col-sm-8">
-      <mat-list #shoes>
-        <mat-list-item (click)="openDialog(shoe)" *ngFor="let shoe of typesOfShoes">
-          <button mat-button>{{shoe}}</button>
+      von {{name}}  <!----, {{vorname}}-->
+      <mat-list #ingredient>
+        <mat-list-item (click)="openDialog(ingr)" *ngFor="let ingr of ingredients">
+          <button mat-button>{{ingr}}</button>
         </mat-list-item>
       </mat-list>
-      <div class="col-md-2 col-sm-1"></div>
     </div>
   </div>
-</div>
