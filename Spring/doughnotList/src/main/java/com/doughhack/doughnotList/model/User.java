@@ -1,5 +1,7 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.ProfileDto;
+import com.doughhack.doughnotList.dto.UserDto;
 import java.util.Objects;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -70,6 +72,12 @@ public class User extends Entity {
 
     public void setHashedPW(String hashedPW) {
         this.hashedPW = hashedPW;
+    }
+
+    public UserDto toDto() {
+        ProfileDto profile = this.profile.toDto();
+
+        return new UserDto(email, hashedPW, profile);
     }
 
 }
