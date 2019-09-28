@@ -4,13 +4,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProfileDto implements DoughNotDto {
+    public long id;
     public String profileName;
     public String firstName;
     public String lsatName;
 
     public List<PreferenceDto> blackList;
 
-    public ProfileDto(String profileName, String firstName, String lsatName) {
+    public ProfileDto(long id, String profileName, String firstName, String lsatName) {
+        this.id = id;
         this.profileName = profileName;
         this.firstName = firstName;
         this.lsatName = lsatName;

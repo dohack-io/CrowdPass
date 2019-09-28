@@ -49,6 +49,6 @@ public class Entry extends Entity {
     }
 
     public EntryDto toDto() {
-        return new EntryDto(name, barcodeNr, amount);
+        return new EntryDto(getId(), name, barcodeNr, amount);
     }
 }

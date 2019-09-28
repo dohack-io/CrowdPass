@@ -54,7 +54,7 @@ public class ShoppingList extends Entity {
     }
 
     public ShoppingListDto toDto() {
-        ShoppingListDto shoppingListDto = new ShoppingListDto(name, admin.toDto());
+        ShoppingListDto shoppingListDto = new ShoppingListDto(getId(), name, admin.toDto());
         List<EntryDto> entryDtos = new LinkedList<>();
         for (Entry entry : entries) {
             entryDtos.add(entry.toDto());

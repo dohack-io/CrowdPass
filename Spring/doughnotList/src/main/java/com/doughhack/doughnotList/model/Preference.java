@@ -35,6 +35,6 @@ public class Preference extends Entity {
     }
 
     public PreferenceDto toDto() {
-        return new PreferenceDto(name, type);
+        return new PreferenceDto(getId(), name, type);
     }
 }

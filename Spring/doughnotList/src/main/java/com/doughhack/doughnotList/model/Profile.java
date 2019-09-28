@@ -86,7 +86,7 @@ public class Profile extends Entity{
     }
 
     public ProfileDto toDto() {
-        ProfileDto profileDto = new ProfileDto(profileName, firstName, lastName);
+        ProfileDto profileDto = new ProfileDto(getId(), profileName, firstName, lastName);
         List<PreferenceDto> preferenceDtos = new LinkedList<>();
         for (Preference preference : blacklist) {
             preferenceDtos.add(preference.toDto());
