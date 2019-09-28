@@ -24,6 +24,11 @@ public class Entry extends Entity {
         this.amount = 1;
     }
 
+    public Entry(EntryDto dto) {
+        this(dto.name, dto.amount);
+        barcodeNr = dto.barcodeNr;
+    }
+
     public String getName() {
         return name;
     }
