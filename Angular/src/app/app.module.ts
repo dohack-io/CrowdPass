@@ -5,6 +5,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
+import { BarecodeScannerLivestreamComponent } from 'ngx-barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DialogComponent } from './dialog/dialog.component';
   imports: [
     BrowserModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BarecodeScannerLivestreamComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

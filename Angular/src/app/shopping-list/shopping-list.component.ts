@@ -19,9 +19,9 @@ export class ShoppingListComponent {
 
 
   openDialog(shoe: string): void {
-    const dialogRef = this.dialog.open(DialogComponent, 
+    const dialogRef = this.dialog.open(DialogComponent,
       {
-        width: '500px', data: { shoeName: shoe }
+        width: '500px', data: { shoeName: shoe}
     });
 
     dialogRef.afterClosed().subscribe(result => {
