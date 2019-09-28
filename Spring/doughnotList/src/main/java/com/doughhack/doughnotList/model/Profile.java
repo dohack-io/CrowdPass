@@ -4,17 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Profile extends Entity{
+public class Profile extends Entity {
     private String firstName;
     private String lastName;
     private String profileName;
     private List<Preference> blacklist;
+    private List<ShoppingList> shoppingLists;
+
 
     public Profile(String firstName, String lastName, String profileName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.profileName = profileName;
-        ArrayList<Preference> blacklist = new ArrayList();
+        this.blacklist = new ArrayList();
+        this.shoppingLists = new ArrayList();
+    }
+
+    public void addShoppingList(ShoppingList list) {
+        shoppingLists.add(list);
     }
 
 
