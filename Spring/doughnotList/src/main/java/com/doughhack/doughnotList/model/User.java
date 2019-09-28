@@ -11,10 +11,10 @@ public class User extends Entity {
     public User(String mail, String pw, String name, String vorname, String profilename) {
         this.email = mail;
         this.hashedPW = pw;
+    }
 
+    public void newProfile(String vorname, String name, String profilename) {
         this.profile = new Profile(vorname, name, profilename);
-
-
     }
 
     @Override
