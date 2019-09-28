@@ -9,10 +9,15 @@ import { ShoppingListComponent } from './app/shopping-list/shopping-list.compone
 import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from './app/dialog/dialog.component';
 
 @NgModule({
   declarations: [
-    ShoppingListComponent
+    ShoppingListComponent,
+    DialogComponent
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   imports: [
     BrowserModule,
