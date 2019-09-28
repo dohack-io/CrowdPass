@@ -1,6 +1,7 @@
 package com.doughhack.doughnotList.controller;
 
 import com.doughhack.doughnotList.dto.ProfileDto;
+import com.doughhack.doughnotList.dto.UserDto;
 import com.doughhack.doughnotList.exceptions.UserAlreadyExistsException;
 import com.doughhack.doughnotList.model.Profile;
 import com.doughhack.doughnotList.model.User;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableAutoConfiguration
 public class UserController {
+    private static final String PATH = "/User";
+
     private final UserService userService;
 
     private final ProfileService profileService;
