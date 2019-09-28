@@ -1,5 +1,6 @@
 package com.doughhack.doughnotList.controller;
 
+import com.doughhack.doughnotList.dto.ProfileDto;
 import com.doughhack.doughnotList.exceptions.UserAlreadyExistsException;
 import com.doughhack.doughnotList.model.Profile;
 import com.doughhack.doughnotList.model.User;
@@ -25,13 +26,13 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/signup")
-    public String signUp(@RequestParam(value = "email") String email, @RequestParam(value = "password") String password, @RequestParam(value = "name") String name, @RequestParam(value = "surname") String surname) throws UserAlreadyExistsException {
+    public ProfileDto signUp(@RequestParam(value = "email") String email, @RequestParam(value = "password") String password, @RequestParam(value = "name") String name, @RequestParam(value = "surname") String surname) throws UserAlreadyExistsException {
         User user = new User(email, password, surname, name, surname + ", " + name);
         Profile profile = new Profile(name, surname, surname + ", " + name);
         profileService.create(profile);
         user.setProfile(profile);
         userService.create(user);
 
-        return user.toString();
+        return profile.toDto();
     }
 }
