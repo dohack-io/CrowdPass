@@ -18,6 +18,11 @@ public class Preference extends Entity {
         this.type = type;
     }
 
+    public Preference(PreferenceDto preferenceDto) {
+        this.name = preferenceDto.name;
+        this.type = preferenceDto.type;
+    }
+
     public String getName() {
         return name;
     }
