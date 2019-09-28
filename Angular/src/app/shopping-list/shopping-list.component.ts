@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ShoppingListComponent implements OnInit {
 
   constructor() { }
-
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   ngOnInit() {
   }
+
 
 }
