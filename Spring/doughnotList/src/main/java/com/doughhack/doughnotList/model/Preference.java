@@ -8,6 +8,9 @@ public class Preference extends Entity {
     private String name;
     private String type;
 
+    public Preference() {
+    }
+
     public Preference(String name, String type) {
         this.name = name;
         this.type = type;

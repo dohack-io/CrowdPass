@@ -2,13 +2,24 @@ package com.doughhack.doughnotList.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Table(name = "Shoppinglist")
+@javax.persistence.Entity
 public class ShoppingList extends Entity {
 
     private String name;
+    @OneToMany
     private List<Entry> entries;
+    @OneToMany
     private List<Profile> member;
+    @OneToOne
     private Profile admin;
+
+    public ShoppingList() {
+    }
 
     public ShoppingList(String name, Profile admin) {
         this.name = name;

@@ -1,9 +1,16 @@
 package com.doughhack.doughnotList.model;
 
+import javax.persistence.Table;
+
+@Table(name = "Entry")
+@javax.persistence.Entity
 public class Entry extends Entity {
     private String name;
     private String barcodeNr;
     private int amount;
+
+    public Entry() {
+    }
 
     public Entry(String name, int amount) {
         this.name = name;

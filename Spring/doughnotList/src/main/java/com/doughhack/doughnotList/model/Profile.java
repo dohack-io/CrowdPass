@@ -14,8 +14,11 @@ public class Profile extends Entity{
     private String profileName;
     @OneToMany
     private List<Preference> blacklist;
+    @OneToMany
     private List<ShoppingList> shoppingLists;
 
+    public Profile() {
+    }
 
     public Profile(String firstName, String lastName, String profileName) {
         this.firstName = firstName;

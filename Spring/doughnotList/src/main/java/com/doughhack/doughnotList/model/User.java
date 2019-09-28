@@ -24,13 +24,16 @@ public class User extends Entity {
     @OneToOne
     private Profile profile;
 
+    public User() {
+    }
+
     public User(String mail, String pw, String name, String vorname, String profilename) {
         this.email = mail;
         this.hashedPW = pw;
     }
 
-    public void newProfile(String vorname, String name, String profilename) {
-        this.profile = new Profile(vorname, name, profilename);
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
     @Override
