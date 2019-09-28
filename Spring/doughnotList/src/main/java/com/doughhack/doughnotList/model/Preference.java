@@ -1,5 +1,9 @@
 package com.doughhack.doughnotList.model;
 
+import javax.persistence.Table;
+
+@Table(name = "Preference")
+@javax.persistence.Entity
 public class Preference extends Entity {
     private String name;
     private String type;
