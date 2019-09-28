@@ -40,7 +40,7 @@ public class EntryController {
         return entry.toDto();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = PATH + "/getbb/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = PATH + "/get/{id}")
     public EntryDto getEntry(@PathVariable long id) {
         Entry entry = entryService.getEntry(id);
         return entry.toDto();
