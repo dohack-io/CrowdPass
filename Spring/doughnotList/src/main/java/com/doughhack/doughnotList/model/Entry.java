@@ -1,5 +1,7 @@
 package com.doughhack.doughnotList.model;
 
+import com.doughhack.doughnotList.dto.EntryDto;
+
 public class Entry extends Entity {
     private String name;
     private String barcodeNr;
@@ -37,5 +39,9 @@ public class Entry extends Entity {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public EntryDto toDto() {
+        return new EntryDto(name, barcodeNr, amount);
     }
 }
