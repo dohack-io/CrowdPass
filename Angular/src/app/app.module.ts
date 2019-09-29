@@ -5,13 +5,19 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ConfigComponent } from './config/config.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    BrowserModule,
+    HttpClientModule,
+    ConfigComponent,
   ],
-  entryComponents:[
+  entryComponents: [
     DialogComponent
   ],
   imports: [

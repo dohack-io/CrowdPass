@@ -4,7 +4,7 @@
       von {{name}}  <!----, {{vorname}}-->
       <mat-list #ingredient>
         <mat-list-item (click)="openDialog(ingr)" *ngFor="let ingr of ingredients">
-          <button mat-button>{{ingr}}</button>
+          <button mat-button>{{ingr.name}} ({{ingr.amount}})</button>
         </mat-list-item>
       </mat-list>
     </div>

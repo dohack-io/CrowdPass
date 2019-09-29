@@ -5,7 +5,7 @@
         <h3>NutzerListe</h3>
         <mat-list #user>
           <mat-list-item  *ngFor="let user of nutzer">
-            <button mat-button>{{user}}</button>
+            <button mat-button>{{user.lastName}}, {{user.firstName}} - {{user.username}}</button>
           </mat-list-item>
         </mat-list>
       </div>
