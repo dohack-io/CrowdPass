@@ -21,7 +21,8 @@ import { AppComponent } from './app/app.component';
     DialogComponent
   ],
   entryComponents: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
