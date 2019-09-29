@@ -6,6 +6,7 @@ import com.doughhack.doughnotList.model.ShoppingList;
 import com.doughhack.doughnotList.services.ProfileService;
 import com.doughhack.doughnotList.services.ShoppingListService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,13 @@ public class ShoppingListController {
         Profile admin = profileService.getProfileById(adminId);
 
         ShoppingList shoppingList = new ShoppingList(name, admin);
+        shoppingList.addMember(admin);
         shoppingListService.create(shoppingList);
         return shoppingList.toDto();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value =  PATH + "/{id}")
+    public ShoppingListDto get(@PathVariable long id) {
+        return shoppingListService.getShoppingList(id).toDto();
     }
 }
