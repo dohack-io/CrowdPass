@@ -4,12 +4,18 @@ import com.doughhack.doughnotList.dto.PreferenceDto;
 import com.doughhack.doughnotList.model.Preference;
 import com.doughhack.doughnotList.services.PreferenceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@EnableAutoConfiguration
 public class PreferenceController {
     private static final String PATH = "/Preference";
-    @Autowired
-    private PreferenceService preferenceService;
+    private final PreferenceService preferenceService;
+
+    public PreferenceController(PreferenceService preferenceService) {
+        this.preferenceService = preferenceService;
+    }
 
 
     @RequestMapping(method = RequestMethod.POST, value = PATH + "/create")

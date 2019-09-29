@@ -10,11 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class ProfileService {
-    @Autowired
-    private ProfileDao profileDao;
+    private final ProfileDao profileDao;
 
-    @Autowired
-    private PreferenceService preferenceService;
+    private final PreferenceService preferenceService;
+
+    public ProfileService(ProfileDao profileDao, PreferenceService preferenceService) {
+        this.profileDao = profileDao;
+        this.preferenceService = preferenceService;
+    }
 
     public void create(Profile profile) {
         profileDao.create(profile);
