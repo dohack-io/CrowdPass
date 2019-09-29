@@ -5,8 +5,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {MatListModule} from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ConfigComponent } from './config/config.component';
+//import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,8 +13,7 @@ import { ConfigComponent } from './config/config.component';
     AppComponent,
     ShoppingListComponent,
     BrowserModule,
-    HttpClientModule,
-    ConfigComponent,
+    //HttpClientModule,
   ],
   entryComponents: [
     DialogComponent

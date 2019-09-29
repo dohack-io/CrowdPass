@@ -9,16 +9,13 @@ import { Nutzer } from './nutzer';
   providedIn: 'root'
 })
 
+//In Anlehnung an https://www.positronx.io/angular-7-httpclient-http-service/
 export class RestApiService {
 
   // Define API
   apiURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
-
-  /*========================================
-    CRUD Methods for consuming RESTful API
-  =========================================*/
 
   // Http Options
   httpOptions = {
@@ -27,7 +24,7 @@ export class RestApiService {
     })
   }
 
-  // HttpClient API get() method => Fetch nutzer list
+  // Fetch nutzer list
   getNutzers(): Observable<Nutzer> {
     return this.http.get<Nutzer>(this.apiURL + '/nutzer')
     .pipe(
@@ -36,7 +33,7 @@ export class RestApiService {
     );
   }
 
-// HttpClient API get() method => Fetch ingredient list
+// Fetch ingredient list
   getIngredients(): Observable<Ingredient> {
   return this.http.get<Ingredient>(this.apiURL + '/ingredients')
   .pipe(
@@ -46,7 +43,7 @@ export class RestApiService {
 }
 
 
- // HttpClient API get() method => Fetch nutzer
+ // Fetch nutzer
  getNutzer(id): Observable<Nutzer> {
   return this.http.get<Nutzer>(this.apiURL + '/nutzer/' + id)
   .pipe(
@@ -55,7 +52,7 @@ export class RestApiService {
   );
 }
 
-// HttpClient API get() method => Fetch ingredient
+// Fetch ingredient
 getIngredient(id): Observable<Ingredient> {
   return this.http.get<Ingredient>(this.apiURL + '/ingredients/' + id)
   .pipe(
@@ -64,7 +61,8 @@ getIngredient(id): Observable<Ingredient> {
   );
 }
 
-// HttpClient API post() method => Create employee
+/* Following function are not implemented in the GUI
+// Create nutzer
 createNutzer(nutzer): Observable<Nutzer> {
   return this.http.post<Nutzer>(this.apiURL + '/employees', JSON.stringify(nutzer), this.httpOptions)
   .pipe(
@@ -73,7 +71,7 @@ createNutzer(nutzer): Observable<Nutzer> {
   )
 }
 
-// HttpClient API post() method => Create ingredient
+// Create ingredient
 createIngredient(ingredient): Observable<Ingredient> {
   return this.http.post<Ingredient>(this.apiURL + '/ingredients', JSON.stringify(ingredient), this.httpOptions)
   .pipe(
@@ -83,7 +81,7 @@ createIngredient(ingredient): Observable<Ingredient> {
 }
 
 
-// HttpClient API put() method => Update nutzer
+// Update nutzer
 updateNutzer(id, nutzer): Observable<Nutzer> {
   return this.http.put<Nutzer>(this.apiURL + '/nutzer/' + id, JSON.stringify(nutzer), this.httpOptions)
   .pipe(
@@ -92,7 +90,7 @@ updateNutzer(id, nutzer): Observable<Nutzer> {
   );
 }
 
-// HttpClient API put() method => Update ingredient
+// Update ingredient
 updateIngredient(id, ingredient): Observable<Ingredient> {
   return this.http.put<Ingredient>(this.apiURL + '/ingredients/' + id, JSON.stringify(ingredient), this.httpOptions)
   .pipe(
@@ -103,7 +101,7 @@ updateIngredient(id, ingredient): Observable<Ingredient> {
 
 
 
-// HttpClient API delete() method => Delete nutzer
+// Delete nutzer
 deleteNutzer(id){
   return this.http.delete<Nutzer>(this.apiURL + '/nutzer/' + id, this.httpOptions)
   .pipe(
@@ -113,7 +111,7 @@ deleteNutzer(id){
 }
 
 
-// HttpClient API delete() method => Delete ingredients
+// Delete ingredients
 deleteIngredient(id){
   return this.http.delete<Ingredient>(this.apiURL + '/ingredients/' + id, this.httpOptions)
   .pipe(
@@ -121,15 +119,14 @@ deleteIngredient(id){
     catchError(this.handleError)
   )
 }
+*/
 
 // Error handling
 handleError(error) {
   let errorMessage = '';
   if(error.error instanceof ErrorEvent) {
-    // Get client-side error
     errorMessage = error.error.message;
   } else {
-    // Get server-side error
     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
   }
   window.alert(errorMessage);

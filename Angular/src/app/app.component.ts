@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RestApiService } from './shared/rest-api.service';
 import { Nutzer } from './shared/nutzer';
-
+//import { RestApiService } from '../shared/rest-api.service';
 
 
 @Component({
@@ -12,34 +11,24 @@ import { Nutzer } from './shared/nutzer';
 
 export class AppComponent implements OnInit {
 
-  constructor(public restApi: RestApiService) {}
+  //public restApi: RestApiService (in constructor)
+  constructor() {}
 
-  nutzer: any[];
-  /*Dummy Data
-  Nutzer[] = [new Nutzer('Iwan', 'Kornilow', 'korni'),
+  nutzer: Nutzer[] = [new Nutzer('Iwan', 'Kornilow', 'korni'),
   new Nutzer('Valentin', 'Saks', 'russe'),
   new Nutzer('Denise', 'Schwarze', 'desch'),
   new Nutzer('Dimitri', 'Simonow', 'dimi')];
-  */
+
 
 
  ngOnInit() {
-  this.loadNutzer();
+  //this.loadNutzer();
 }
 
- loadNutzer() {
-  /*const result = this.restApi.getNutzers().subscribe((data: {}) => {
-    this.nutzer = [data];
-  });
-  if (result == null){*/
-    const n: Nutzer[] = [new Nutzer('Iwan', 'Kornilow', 'korni'),
-    new Nutzer('Valentin', 'Saks', 'russe'),
-    new Nutzer('Denise', 'Schwarze', 'desch'),
-    new Nutzer('Dimitri', 'Simonow', 'dimi')];
-    return n;
-  /*} else {
-    return result;
+ /*loadNutzer() {
+    return this.restApi.getNutzers().subscribe((data: {}) => {
+      this.nutzer = [data];
+    });
   }*/
-}
 
 }
