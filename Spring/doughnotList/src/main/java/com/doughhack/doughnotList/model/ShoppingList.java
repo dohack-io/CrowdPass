@@ -3,7 +3,6 @@ package com.doughhack.doughnotList.model;
 import com.doughhack.doughnotList.dto.EntryDto;
 import com.doughhack.doughnotList.dto.ProfileDto;
 import com.doughhack.doughnotList.dto.ShoppingListDto;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +38,10 @@ public class ShoppingList extends Entity {
 
     public void addEntry(String name, int amount) {
         entries.add(new Entry(name, amount));
+    }
+
+    public void addEntry(Entry entry) {
+        entries.add(entry);
     }
 
     public void addMember(Profile member) {
